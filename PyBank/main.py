@@ -42,14 +42,14 @@ with open (file, newline = "") as csvfile:
     average_change = (net_total[1]-net_total[0])
     changes = []
 
-    for value in range(month_count-1):
+    for month in range(month_count-1):
         average_change = (net_total[x] - net_total[y])
         changes.append(int(average_change))
         x+=1
         y+=1
         #print(x , y)
         
-    av_mon_chng = round(sum(changes)/(month_count -1)[2])
+    av_mon_chng = round(sum(changes)/(month_count -1),2)
 
 #print(sum(changes))
 #print(months)
@@ -62,5 +62,4 @@ print("Financial Analysis")
 print("----------------------------")
 print(f"Months: {len(months)}")
 print(f"Total: ${sum(net_total)}")
-print(f"Average Change for Profit/Loss: {average}")
-print(f"Average Monthly Change: {av_mon_chng}")
+print(f"Average Monthly Profit/Loss Change: ${av_mon_chng}")
