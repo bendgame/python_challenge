@@ -61,10 +61,10 @@ with open (file, newline = "") as csvfile:
     max_chng_month = months[chng_i_max + 1]
   
 
-    print(min(changes))
-    print(max(changes))
-print(chng_i_min)
-print(chng_i_max)
+#    print(min(changes))
+#    print(max(changes))
+#print(chng_i_min)
+#print(chng_i_max)
 #print(min_month)
 #print(max_month)
 
