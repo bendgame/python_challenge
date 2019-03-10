@@ -51,15 +51,28 @@ with open (file, newline = "") as csvfile:
         
     av_mon_chng = round(sum(changes)/(month_count -1),2)
 
-#print(sum(changes))
-#print(months)
-#print(net_total)
-#print(average_change)
-#print(changes)
-#print(average)
+    min_change = min(changes)
+    max_change = max(changes)
+
+    chng_i_min = changes.index(min_change)
+    chng_i_max = changes.index(max_change)
+    
+    min_chng_month = months[chng_i_min + 1]
+    max_chng_month = months[chng_i_max + 1]
+  
+
+    print(min(changes))
+    print(max(changes))
+print(chng_i_min)
+print(chng_i_max)
+#print(min_month)
+#print(max_month)
 
 print("Financial Analysis")
 print("----------------------------")
 print(f"Months: {len(months)}")
 print(f"Total: ${sum(net_total)}")
-print(f"Average Monthly Profit/Loss Change: ${av_mon_chng}")
+#print(f"Average Change for Profit/Loss: {average}")
+print(f"Average Monthly Change: {av_mon_chng}")
+print(f"Greatest Increase in Profits: {max_chng_month} (${max_change})")
+print(f"Greatest Decrease in Profits: {min_chng_month} (${min_change})")
