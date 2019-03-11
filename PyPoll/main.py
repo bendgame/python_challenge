@@ -34,6 +34,7 @@ correy = []
 li = []
 otool = []
 
+unique_candidates = list(set(candidates))
 
 x = 0
 y = 0
@@ -58,21 +59,45 @@ with open (file, newline ="") as csvfile:
         if (candidates[x] == "Khan"):
             khan.append(1)
         x+=1
+    
+    x=0
+   
+    for candidate in candidates:
+        if (candidates[x] == "Correy"):
+            correy.append(1)
+        x+=1
+    x=0
+   
+    for candidate in candidates:
+        if (candidates[x] == "Li"):
+            li.append(1)
+        x+=1
+    x=0        
+    
+    for candidate in candidates:
+        if (candidates[x] == "O'Tooley"):
+            otool.append(1)
+        x+=1
+            
+            
             
     unique_candidates = list(set(candidates))
    
-    
+    khan_votes = khan/
+'''  
     print(unique_candidates)    
     
     print(len(khan))
-
+print(len(correy))
+print(len(li))
+print(len(otool))
     
     #print(total_votes)
     
     #print(voterID[:5])
     #print(county[:5])
-    print(candidates[:5])
-    
+print(candidates[:5])
+'''    
 
 print("Election Results")
 print(" -------------------------")
