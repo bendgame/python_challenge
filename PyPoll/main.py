@@ -26,30 +26,39 @@ import os
 file = r'C:\Users\bendgame\Desktop\Homework3\python_challenge\PyPoll\election_data.csv'
 
 
+voterID = []
+county = []
+candidate = []
 
 
 with open (file, newline ="") as csvfile:
 
-     readcsv = csv.reader(csvfile, delimiter = ',')
+    readcsv = csv.reader(csvfile, delimiter = ',')
 
     csv_header = next(csvfile)
     print(f"header: {csv_header}")
+    
+    for row in readcsv:
+        voterID.append(row[0])
+        county.append(row[1])
+        candidate.append(row[2])
+        
+    
+    #print(voterID[:5])
+    #print(county[:5])
+    #print(candidate[:5])
+    
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print("Election Results")
+print(" -------------------------")
+print(f"Total Votes: ")
+print("-------------------------")
+print(f"Khan: ")
+print(f"Correy: ")
+print(f" Li: ")
+print(f" O'Tooley: ")
+print(f" -------------------------")
+print(f"-------------------------")
 
 
 
