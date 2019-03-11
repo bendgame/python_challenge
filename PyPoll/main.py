@@ -28,8 +28,16 @@ file = r'C:\Users\bendgame\Desktop\Homework3\python_challenge\PyPoll\election_da
 
 voterID = []
 county = []
-candidate = []
+candidates = []
+khan = []
+correy = []
+li = []
+otool = []
 
+
+x = 0
+y = 0
+z = 0
 
 with open (file, newline ="") as csvfile:
 
@@ -37,21 +45,38 @@ with open (file, newline ="") as csvfile:
 
     csv_header = next(csvfile)
     print(f"header: {csv_header}")
-    
+     
     for row in readcsv:
         voterID.append(row[0])
         county.append(row[1])
-        candidate.append(row[2])
-        
+        candidates.append(row[2])
+   
+    total_votes = len(voterID)        
+    
+    
+    for candidate in candidates:
+        if (candidates[x] == "Khan"):
+            khan.append(1)
+        x+=1
+            
+    unique_candidates = list(set(candidates))
+   
+    
+    print(unique_candidates)    
+    
+    print(len(khan))
+
+    
+    #print(total_votes)
     
     #print(voterID[:5])
     #print(county[:5])
-    #print(candidate[:5])
+    print(candidates[:5])
     
 
 print("Election Results")
 print(" -------------------------")
-print(f"Total Votes: ")
+print(f"Total Votes: {total_votes}")
 print("-------------------------")
 print(f"Khan: ")
 print(f"Correy: ")
@@ -59,10 +84,3 @@ print(f" Li: ")
 print(f" O'Tooley: ")
 print(f" -------------------------")
 print(f"-------------------------")
-
-
-
-
-
-
-
