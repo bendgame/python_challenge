@@ -30,7 +30,7 @@ file = r'C:\Users\bendgame\Desktop\Homework3\python_challenge\PyPoll\election_da
 
 with open (file, newline ="") as csvfile:
 
-    readcsv = csv.readiner(csvfile, delimiter = ',')
+     readcsv = csv.reader(csvfile, delimiter = ',')
 
     csv_header = next(csvfile)
     print(f"header: {csv_header}")
