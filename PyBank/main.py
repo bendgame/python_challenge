@@ -68,11 +68,26 @@ with open (file, newline = "") as csvfile:
 #print(min_month)
 #print(max_month)
 
+#Print the values in console
+
 print("Financial Analysis")
 print("----------------------------")
 print(f"Months: {len(months)}")
 print(f"Total: ${sum(net_total)}")
-#print(f"Average Change for Profit/Loss: {average}")
 print(f"Average Monthly Change: {av_mon_chng}")
 print(f"Greatest Increase in Profits: {max_chng_month} (${max_change})")
 print(f"Greatest Decrease in Profits: {min_chng_month} (${min_change})")
+
+#Write the output to a text file
+fin_analysis = open(“Financial_Analysis.txt”,”w”) 
+
+fin_analysis.write("Financial Analysis")
+fin_analysis.write("----------------------------")
+fin_analysis.write(f"Months: {len(months)}")
+fin_analysis.write(f"Total: ${sum(net_total)}")
+fin_analysis.write(f"Average Monthly Change: {av_mon_chng}")
+fin_analysis.write(f"Greatest Increase in Profits: {max_chng_month} (${max_change})")
+fin_analysis.write(f"Greatest Decrease in Profits: {min_chng_month} (${min_change})")
+
+ 
+fin_analysis.close() 
