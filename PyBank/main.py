@@ -61,13 +61,6 @@ with open (file, newline = "") as csvfile:
     max_chng_month = months[chng_i_max + 1]
   
 
-#    print(min(changes))
-#    print(max(changes))
-#print(chng_i_min)
-#print(chng_i_max)
-#print(min_month)
-#print(max_month)
-
 #Print the values in console
 
 print("Financial Analysis")
@@ -79,15 +72,15 @@ print(f"Greatest Increase in Profits: {max_chng_month} (${max_change})")
 print(f"Greatest Decrease in Profits: {min_chng_month} (${min_change})")
 
 #Write the output to a text file
-fin_analysis = open(“Financial_Analysis.txt”,”w”) 
+fin_analysis = open("Financial_Analysis.txt","w")
 
-fin_analysis.write("Financial Analysis")
-fin_analysis.write("----------------------------")
-fin_analysis.write(f"Months: {len(months)}")
-fin_analysis.write(f"Total: ${sum(net_total)}")
-fin_analysis.write(f"Average Monthly Change: {av_mon_chng}")
-fin_analysis.write(f"Greatest Increase in Profits: {max_chng_month} (${max_change})")
-fin_analysis.write(f"Greatest Decrease in Profits: {min_chng_month} (${min_change})")
+fin_analysis.write("Financial Analysis\n")
+fin_analysis.write("----------------------------\n")
+fin_analysis.write(f"Months: {len(months)}\n")
+fin_analysis.write(f"Total: ${sum(net_total)}\n")
+fin_analysis.write(f"Average Monthly Change: {av_mon_chng}\n")
+fin_analysis.write(f"Greatest Increase in Profits: {max_chng_month} (${max_change})\n")
+fin_analysis.write(f"Greatest Decrease in Profits: {min_chng_month} (${min_change})\n")
 
  
 fin_analysis.close() 
