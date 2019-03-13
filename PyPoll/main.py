@@ -37,19 +37,18 @@ otool = []
 unique_candidates = list(set(candidates))
 
 x = 0
-y = 0
-z = 0
+
 
 with open (file, newline ="") as csvfile:
 
     readcsv = csv.reader(csvfile, delimiter = ',')
 
     csv_header = next(csvfile)
-    print(f"header: {csv_header}")
+    #print(f"header: {csv_header}")
      
     for row in readcsv:
         voterID.append(row[0])
-        county.append(row[1])
+        #county.append(row[1])
         candidates.append(row[2])
    
     total_votes = len(voterID)        
@@ -79,33 +78,53 @@ with open (file, newline ="") as csvfile:
             otool.append(1)
         x+=1
             
-            
-            
-    unique_candidates = list(set(candidates))
+#unique_candidates = list(set(candidates))
    
-    khan_votes = khan/
-'''  
-    print(unique_candidates)    
+    khan_percent = round((len(khan)/total_votes),3)
+    correy_percent = round((len(correy)/total_votes),3)
+    li_percent = round((len(li)/total_votes),3)
+    otool_percent = round((len(otool)/total_votes),3)
+
+
+
+#winner_list = {"Khan":"khan_percent", "Correy":"correy_percent", "Li":"li_percent", "O'Tooley":"otool_percent"}
+
+    winner_list = [khan_percent,correy_percent,li_percent,otool_percent]
     
-    print(len(khan))
-print(len(correy))
-print(len(li))
-print(len(otool))
-    
-    #print(total_votes)
-    
-    #print(voterID[:5])
-    #print(county[:5])
-print(candidates[:5])
-'''    
+    if winner_list[0] > winner_list[1] and winner_list[0] > winner_list[2] and winner_list[0] > winner_list[3]:
+        winner = "Khan"
+    if winner_list[1] > winner_list[2] and winner_list[1] > winner_list[3] and winner_list[1] > winner_list[0]:
+        winner = "Correy"
+    if winner_list[2] > winner_list[1] and winner_list[2] > winner_list[3] and winner_list[2] > winner_list[0]:
+        winner = "Li"
+    if winner_list[3] > winner_list[0] and winner_list[3] > winner_list[1] and winner_list[3] > winner_list[2]:
+        winner = "O'Tooley"
+
+'''
+#winner = winner_list.max()
+print(winner_list)
+print(winner)
+'''
+'''
+print(khan_percent)
+print(correy_percent)
+print(li_percent)
+print(otool_percent)
+'''
+khan_percent = "{:.3%}".format(khan_percent)
+correy_percent = "{:.3%}".format(correy_percent)
+li_percent = "{:.3%}".format(li_percent)
+otool_percent = "{:.3%}".format(otool_percent)
+ 
 
 print("Election Results")
 print(" -------------------------")
 print(f"Total Votes: {total_votes}")
 print("-------------------------")
-print(f"Khan: ")
-print(f"Correy: ")
-print(f" Li: ")
-print(f" O'Tooley: ")
+print(f"Khan: {khan_percent} ({len(khan)})")
+print(f"Correy: {correy_percent} ({len(correy)})")
+print(f"Li: {li_percent} ({len(li)}) ")
+print(f"O'Tooley: {otool_percent} ({len(otool)})")
 print(f" -------------------------")
+print(f"Winner: {winner}")
 print(f"-------------------------")
