@@ -23,13 +23,17 @@ perc = sum(counts)
 x = 0
 for candidate in candidates:
     zz = round(counts[x]/perc,3)
+    zz="{:.3%}".format(zz)
     percc.append(zz)
     x+=1
-    
+
+#percc ="{:.3%}".format(percc)
 print(percc)
 
 data = list(zip(candidates, percc, counts))
 print(data[1])
+
+
 
 #percc = perc/counts
 #print(percc)
@@ -46,4 +50,3 @@ print(f"{data}")
 #print(f" -------------------------")
 #print(f"Winner: {winner}")
 print(f"-------------------------")
-    
