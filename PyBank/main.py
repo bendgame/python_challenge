@@ -18,8 +18,10 @@ import os
 
 #file = r'C:\Users\bendgame\Desktop\Homework3\python_challenge\PyBank\PyBank_data.csv'
 
+#fetch the file
 file = os.path.join ('..', 'PyBank','PyBank_data.csv')
 
+#create placeholder lists for the data
 months = []
 net_total = []
 
@@ -30,33 +32,45 @@ with open (file, newline = "") as csvfile:
     csv_header = next(csvfile)
     #print(f"header: {csv_header}")
 
+    #put the data into lists
     for row in readcsv:
         months.append(row[0])
         net_total.append(int(row[1]))
         
-    #average = sum(net_total)/len(months)
-    
+   
+    #count the number of months
     month_count = len(months)
+    
+    #set variables for loops
     x = 1
     y = 0
+    
+    #average change place holder
     average_change = (net_total[1]-net_total[0])
+    
+    #place holder list for changes 
     changes = []
-
+    
+    #for loop to calculate month to month change and dump the values into a list
     for month in range(month_count-1):
         average_change = (net_total[x] - net_total[y])
         changes.append(int(average_change))
         x+=1
         y+=1
         #print(x , y)
-        
+    
+    #Calcuate the average monthly change and round it    
     av_mon_chng = round(sum(changes)/(month_count -1),2)
 
+    #find the min and max change
     min_change = min(changes)
     max_change = max(changes)
 
+    #return the index to find the positions in the list
     chng_i_min = changes.index(min_change)
     chng_i_max = changes.index(max_change)
     
+    #find the months for the min and max changes
     min_chng_month = months[chng_i_min + 1]
     max_chng_month = months[chng_i_max + 1]
   
