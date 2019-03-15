@@ -16,9 +16,9 @@
 import csv
 import os
 
-file = r'C:\Users\bendgame\Desktop\Homework3\python_challenge\PyBank\PyBank_data.csv'
+#file = r'C:\Users\bendgame\Desktop\Homework3\python_challenge\PyBank\PyBank_data.csv'
 
-#file = os.path.join ('..', 'PyBank','PyBank_data.csv')
+file = os.path.join ('..', 'PyBank','PyBank_data.csv')
 
 months = []
 net_total = []
@@ -28,7 +28,7 @@ with open (file, newline = "") as csvfile:
     readcsv = csv.reader(csvfile, delimiter = ',')
 
     csv_header = next(csvfile)
-    print(f"header: {csv_header}")
+    #print(f"header: {csv_header}")
 
     for row in readcsv:
         months.append(row[0])
