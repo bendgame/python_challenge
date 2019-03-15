@@ -54,16 +54,16 @@ winner_count = max_count.max()
 #put the zipped data into a data frame
 df_data = pd.DataFrame(data)
 
-#calculate the winner and put it into a list
+#search the data frame for the candidate with the most counts put it into a list
 winner = list(df_data.loc[df_data[2]== winner_count,0])
 
 #rename the columns for df_data
 sorted_data =df_data.columns =["Canidate |", "Percent of Votes |", "Vote Count"]
 
-#sort the columns by vote count in descending order
+#sort the columns by vote count in descending order for clean output
 sorted_data = df_data.sort_values("Vote Count", ascending = False )
 
-
+#print the output into console
 print("Election Results")
 print(" -------------------------")
 print(f"Total Votes: {total_votes}")
