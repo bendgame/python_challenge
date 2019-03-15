@@ -86,4 +86,4 @@ election_winner.write(f" -------------------------\n")
 election_winner.write(f"Winner: {winner}\n")
 election_winner.write(f"-------------------------")
 
- election_winner.close()
+election_winner.close()
