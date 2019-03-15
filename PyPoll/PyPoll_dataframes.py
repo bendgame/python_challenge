@@ -73,7 +73,7 @@ print(f" -------------------------")
 print(f"Winner: {winner}")
 print(f"-------------------------")
 
-#Write the outcome data to a txt file
+#Write the outcome data to a txt file named election_winner
 
 election_winner = open("election_winner.txt","w")
 
