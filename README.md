@@ -1,4 +1,4 @@
-# python_challenge
+# Eric_Kleppen_python_challenge
 repo for homework 3
 
 Py bank was pretty easy, even without data frames. 
