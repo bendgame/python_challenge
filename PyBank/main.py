@@ -1,3 +1,5 @@
+#Eric Kleppen
+
 #this is main.py in the pybank
 #The total number of months included in the dataset
 #The net total amount of "Profit/Losses" over the entire period
